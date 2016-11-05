@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Carlo Bailey - Designer, New York</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='./static/lib/custom.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- <div class="jumbotron" style="background: #FFF"> -->
+    <div style="display: block; height: 100%;">
+		<div class="section">
+			<div>
+				<p>Carlo Bailey</p>
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<p>design, research and analytics</p>
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<p>current work</p>
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<p>available for collaboration</p>
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<p>i sometimes write</p>
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<p>based in new york</p>
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<p>from london</p>
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<p>resume here</p>
+			</div>
+		</div>
+    
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+    	$('document').ready(function() {
+
+     // We need to duplicate the whole body of the website so if you scroll down you can see both the bottom and the top at the same time. Before we do this we need to know the original height of the website.
+     var origDocHeight = document.body.offsetHeight;
+
+     // now we know the height we can duplicate the body    
+     $("body").contents().clone().appendTo("body");
+
+
+     $(document).scroll(function(){ // detect scrolling
+
+         var scrollWindowPos = $(document).scrollTop(); // store how far we have scrolled
+
+         if(scrollWindowPos >= origDocHeight*4 ) { // if we scrolled further then the original doc height
+             $(document).scrollTop(0); // then scroll to the top
+         }       
+     });
+
+ }); 
+    </script>
+</body>
+</html>
