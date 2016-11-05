@@ -1,0 +1,37 @@
+@font-face {
+  font-family: Din-med;
+  src: url("./fonts/DIN-Medium.ttf") format("truetype");
+}
+
+.section:nth-child(odd){
+	background: #FFF !important;
+	color: #B4D8D8 !important;
+}
+
+.section:nth-child(even){
+	background: #B4D8D8 !important;
+	color: #FFF !important;
+}
+
+.section {
+    display: block;
+    box-sizing: border-box;
+    height: 50%;
+    width: 100%;
+    min-height: 260px;
+    position: relative;
+    text-align: center;
+    
+}
+
+.section p {
+	font-family: "Din-med", Helvetica,sans-serif;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+}
