@@ -10,8 +10,11 @@
 
 </head>
 <body>
-    <!-- <div class="jumbotron" style="background: #FFF"> -->
+    <!-- <div class="jumbotron" style="background: #FFF"> -->                
     <div style="display: block; height: 100%;">
+    	<div class="shapes">
+    		<svg id="svgObject" width="300px" height="300px"></svg>
+    	</div>
 		<div class="section">
 			<div>
 				<p>Carlo Bailey</p>
@@ -52,33 +55,62 @@
 				<p>resume here</p>
 			</div>
 		</div>
-    
+		<div class="section">
+			<div>
+				<p>Carlo Bailey</p>
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<p>design, research and analytics</p>
+			</div>
+		</div>
+
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="./static/lib/snap.svg-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript">
 
-    	$('document').ready(function() {
+		var origDocHeight = document.body.offsetHeight*4;
 
-     // We need to duplicate the whole body of the website so if you scroll down you can see both the bottom and the top at the same time. Before we do this we need to know the original height of the website.
-     var origDocHeight = document.body.offsetHeight;
+		$(document).ready(function() {
 
-     // now we know the height we can duplicate the body    
-     $("body").contents().clone().appendTo("body");
+		    function loop() {
+		        $('.section').css({top:0});
+		        $('.section').animate ({
+		            top: '-='+origDocHeight,
+		        }, 50000, 'linear', function() {
+		            loop();
+		        });
+		    }
+		    loop();
+		 });
+
+		s = Snap("#svgObject");
+		var path = s.path("M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0").attr({ fill: "none", stroke: "red", opacity: "1" });
+		var square = s.rect(10,150,50,50).attr({fill: "#FCD57E"});
+		var circle = s.circle(120,25,25,25).attr({fill: "#7878A0"});
+		var pole = s.rect(180,25,10,100).attr({fill: "#EA757E"});
+		var center = s.rect(150,150,5,5).attr({fill: "none"});
+
+		function infRotate( el,ref ) {
+			var bbox = ref.getBBox();
+			var trans1 = 'r360,'+(bbox.cx).toString()+','+(bbox.cy).toString();
+			var trans2 = 'r0,'+(bbox.cx).toString()+','+(bbox.cy).toString();
+		    el.transform(trans1); // removing the previous completed transform.
+		    el.animate({ transform: trans2 }, 2000, mina.linear, infRotate.bind( null,el,ref ));
+		};
 
 
-     $(document).scroll(function(){ // detect scrolling
+		infRotate( square,center )
+		
+		infRotate( pole, center);
 
-         var scrollWindowPos = $(document).scrollTop(); // store how far we have scrolled
-
-         if(scrollWindowPos >= origDocHeight*4 ) { // if we scrolled further then the original doc height
-             $(document).scrollTop(0); // then scroll to the top
-         }       
-     });
-
- }); 
     </script>
 </body>
 </html>
+
+

@@ -35,3 +35,11 @@
     margin-right: -50%;
     transform: translate(-50%, -50%); 
 }
+
+.shapes {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+	transform: translate(-50%, -50%);
+}
