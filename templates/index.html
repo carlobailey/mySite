@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 </head>
-<body>
+<body class='stop-scrolling' id="body">
     <!-- <div class="jumbotron" style="background: #FFF"> -->                
     <div style="display: block; height: 100%;">
     	<div class="shapes">
@@ -74,6 +74,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript">
 
+
 		var origDocHeight = document.body.offsetHeight*4;
 
 		$(document).ready(function() {
@@ -90,10 +91,9 @@
 		 });
 
 		s = Snap("#svgObject");
-		var path = s.path("M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0").attr({ fill: "none", stroke: "red", opacity: "1" });
-		var square = s.rect(10,150,50,50).attr({fill: "#FCD57E"});
-		var circle = s.circle(120,25,25,25).attr({fill: "#7878A0"});
-		var pole = s.rect(180,25,10,100).attr({fill: "#EA757E"});
+		var path = s.path("M 150, 150 m -50, 0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0").attr({ fill: "none", stroke: "white", strokeWidth: 5 , mixBlendMode: "difference"});
+		var circle = s.circle(160,70,20,20).attr({fill: "white"});
+		pole = s.rect(150,150,5,50).attr({fill: "white"});
 		var center = s.rect(150,150,5,5).attr({fill: "none"});
 
 		function infRotate( el,ref ) {
@@ -101,13 +101,21 @@
 			var trans1 = 'r360,'+(bbox.cx).toString()+','+(bbox.cy).toString();
 			var trans2 = 'r0,'+(bbox.cx).toString()+','+(bbox.cy).toString();
 		    el.transform(trans1); // removing the previous completed transform.
-		    el.animate({ transform: trans2 }, 2000, mina.linear, infRotate.bind( null,el,ref ));
+		    el.animate({ transform: trans2 }, -6000, mina.linear, infRotate.bind( null,el,ref ));
 		};
 
 
-		infRotate( square,center )
+		infRotate( circle,center )
 		
 		infRotate( pole, center);
+
+		// function to pass to svg to enable scrolling
+		var test = function(){
+    		console.log("success!");
+    	}
+
+		circle.click(test);
+
 
     </script>
 </body>
