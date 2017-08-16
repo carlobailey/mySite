@@ -9,112 +9,52 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 </head>
-<body class='stop-scrolling' id="body">
+<body class='' id="body">
     <!-- <div class="jumbotron" style="background: #FFF"> -->                
-    <div style="display: block; height: 100%;">
-    	<div class="shapes">
-    		<svg id="svgObject" width="300px" height="300px"></svg>
-    	</div>
+    <div id="wrapper"> 
 		<div class="section">
-			<div>
-				<p>Carlo Bailey</p>
-			</div>
+			<!-- <div> -->
+				<p>Currently a design researcher at WeWork doing <span class="keyword">spatial analytics</span> and <span id="data-s" class="keyword">data science</span>.
+					Work includes utilizing <span class="keyword">natural language processing</span> to analyze user <span class="keyword">feedback data</span>,
+					creating apps to inform <span id="des" class="keyword">design</span> decisions, building predictive <span class="keyword">ML</span> models, <span class="keyword">data
+					visualisation</span> for business intelligence, and sometimes dabbling in <span class="keyword">IoT</span> development.<br><br>
+
+					Went to Columbia University to study <span class="keyword">architecture</span>, focussing on <span class="keyword">design computation</span>,
+					where I also taught a graduate <span class="keyword">class</span> on spatial analytics. Previously worked at Foster + 
+					Partners and was a researcher at KieranTimberlake.<br><br>
+
+					Often speak about <span class="keyword">technology</span> and sometimes write about <span class="keyword">design theory</span>...</p>
+			<!-- </div> -->
 		</div>
-		<div class="section">
-			<div>
-				<p>design, research and analytics</p>
-			</div>
-		</div>
-		<div class="section">
-			<div>
-				<p>current work</p>
-			</div>
-		</div>
-		<div class="section">
-			<div>
-				<p>available for collaboration</p>
-			</div>
-		</div>
-		<div class="section">
-			<div>
-				<p>i sometimes write</p>
-			</div>
-		</div>
-		<div class="section">
-			<div>
-				<p>based in new york</p>
-			</div>
-		</div>
-		<div class="section">
-			<div>
-				<p>from london</p>
-			</div>
-		</div>
-		<div class="section">
-			<div>
-				<p>resume here</p>
-			</div>
-		</div>
-		<div class="section">
-			<div>
-				<p>Carlo Bailey</p>
-			</div>
-		</div>
-		<div class="section">
-			<div>
-				<p>design, research and analytics</p>
-			</div>
-		</div>
+        <div class="BG">
+            <img id="popup" src="./static/lib/images/WeWork_Weihai-final-large-3.jpg">
+        </div>
 
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
-    <script type="text/javascript" src="./static/lib/snap.svg-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript">
 
 
-		var origDocHeight = document.body.offsetHeight*4;
-
-		$(document).ready(function() {
-
-		    function loop() {
-		        $('.section').css({top:0});
-		        $('.section').animate ({
-		            top: '-='+origDocHeight,
-		        }, 50000, 'linear', function() {
-		            loop();
-		        });
-		    }
-		    loop();
-		 });
-
-		s = Snap("#svgObject");
-		var path = s.path("M 150, 150 m -50, 0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0").attr({ fill: "none", stroke: "white", strokeWidth: 5 , mixBlendMode: "difference"});
-		var circle = s.circle(160,70,20,20).attr({fill: "white"});
-		pole = s.rect(150,150,5,50).attr({fill: "white"});
-		var center = s.rect(150,150,5,5).attr({fill: "none"});
-
-		function infRotate( el,ref ) {
-			var bbox = ref.getBBox();
-			var trans1 = 'r360,'+(bbox.cx).toString()+','+(bbox.cy).toString();
-			var trans2 = 'r0,'+(bbox.cx).toString()+','+(bbox.cy).toString();
-		    el.transform(trans1); // removing the previous completed transform.
-		    el.animate({ transform: trans2 }, -6000, mina.linear, infRotate.bind( null,el,ref ));
-		};
+    // hide/show images on design
+    $("#des").hover(function(){
+        $('#popup').show();
+    },function(){
+        $('#popup').hide();
+    });
 
 
-		infRotate( circle,center )
-		
-		infRotate( pole, center);
-
-		// function to pass to svg to enable scrolling
-		var test = function(){
-    		console.log("success!");
-    	}
-
-		circle.click(test);
+    // change text colour
+    $('#des').hover(function () {
+        $("p").css('color', 'white');
+        $(this).css('color', 'black');
+    },
+    function () {
+        $("p").css('color', 'black');
+    });
 
 
     </script>

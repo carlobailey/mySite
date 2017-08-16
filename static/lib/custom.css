@@ -1,51 +1,52 @@
 @font-face {
-  font-family: Din-med;
-  src: url("./fonts/DIN-Medium.ttf") format("truetype");
+  font-family: Din-Black;
+  src: url("./fonts/DINBlack.ttf") format("truetype");
 }
 
-.section:nth-child(odd){
-	background: #FFF !important;
-	color: #000 !important;
+@font-face {
+  font-family: Plantin;
+  src: url("./fonts/Plantin.ttf") format("truetype");
 }
 
-.section:nth-child(even){
-	background: #000 !important;
-	color: #FFF !important;
+
+.section p {
+	font-family: "Plantin", Helvetica,sans-serif;
+	font-size: 44px;
+	text-align: left; /*justify*/
+	margin: 35px; 
+}
+
+.keyword {
+  font-family: "Din-Black", Helvetica,sans-serif;
+  font-size: 44px;
+  /*color: black;*/
 }
 
 .section {
-    display: block;
-    box-sizing: border-box;
-    height: 50%;
-    width: 100%;
-    min-height: 260px;
-    position: relative;
-    text-align: center;
+        width: 100%; 
+        z-index:0;
+        position: absolute;                      
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.BG {
+  height: 100%;
+  z-index:1;
+  display: inline-block;
+  vertical-align: middle;
+}
     
-}
-
-.section p {
-	font-family: "Din-med", Helvetica,sans-serif;
-	font-size: 1.5em;
-	text-transform: uppercase;
-	margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%); 
-}
-
-.shapes {
-    mix-blend-mode: difference !important;
-	position: fixed;
-	top: 100% !important;
-	left: 100% !important;
-	z-index: 100;
-	transform: translate(-100%, -100%);
-}
-
-.stop-scrolling {
-  height: 100% ;
-  overflow: hidden ;
-}
+img {
+   position: absolute;
+   top: 24%;
+   left: 25%;
+   width: 50%;
+   display: none;
+}    
+                                          
+                                                        
