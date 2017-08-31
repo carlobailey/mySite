@@ -19,8 +19,12 @@
 .keyword {
   font-family: "Din-Black", Helvetica,sans-serif;
   font-size: 44px;
-  /*color: black;*/
+  
 }
+
+/*span .design {
+  z-index: 5 !important;
+}*/
 
 .section {
         width: 100%; 
@@ -48,5 +52,11 @@ img {
    width: 50%;
    display: none;
 }    
-                                          
-                                                        
+       
+img .app {
+   position: absolute;
+   /*top: 24%;*/
+   left: 25%;
+   /*width: 10%;*/
+   display: none;
+}                                       
