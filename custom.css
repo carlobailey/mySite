@@ -33,7 +33,7 @@
 .keyword {
   font-family: "Din-Black", Helvetica,sans-serif;
   line-height: 75%;
-  mix-blend-mode: difference;
+  /*mix-blend-mode: difference;*/
 }
 
 .keyword:hover {
@@ -56,6 +56,21 @@ a {
   color: inherit !important; 
   text-decoration: None !important;
 }
+
+.hover-img { 
+  position:relative;
+ }
+.hover-img span {
+  position:absolute; 
+  left:-9999px; 
+  top:-9999px; 
+  z-index:100 !important;
+  mix-blend-mode: none !important;
+ }
+.hover-img:hover span { 
+  top: 20px; 
+  left:100%;
+ }
 
 .section {
         width: 100%; 
