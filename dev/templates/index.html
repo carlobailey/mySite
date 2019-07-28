@@ -1,0 +1,129 @@
+<html>
+<head>
+    <title>Carlo Bailey - Researcher, New York</title>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='./static/lib/custom.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body class='' id="body">
+    <!-- <div class="jumbotron" style="background: #FFF"> -->                
+    <div id="wrapper"> 
+		<div class="section">
+              
+			<!-- <div> -->
+				<p>Carlo is currently a research scientist at <span class="keyword"><a 
+                    href="https://topos.com/">Topos</a></span>, a 
+                    location intelligence startup bringing advanced machine learning to the commercial 
+                    real estate industry. Previously he was a researcher in <span class="keyword"><a 
+                    href="https://research.wework.com/">WeWork’s</a></span> applied science team. 
+                    His work and research focuses on machine 
+                    learning, agent based modeling, data visualization, real estate and architecture, as well as creative 
+                    coding.<br><br>
+					Notable recent projects include <span class="keyword"><a 
+                    href="https://link.springer.com/chapter/10.1007/978-981-10-6611-5_29">predicting the 
+                    occupancy</a></span> of offices based on their physical attributes, 
+                    <span class="keyword"><a href="https://journals.sagepub.com/eprint/KumUk4AE8tsngPnqENDX/full">
+                    automating</a></span> the layout of desks in office space, and 
+                    building a <span class="keyword">recommendation system</span> for real estate 
+                    brokers.<br><br>
+					Carlo attended Columbia University to study architecture, focussing on design computation, 
+                    where he also taught a graduate class on <span class="keyword"><a href="https://measurespace.tumblr.com/">
+                    spatial analytics</a></span>. 
+                    Previously worked at Foster + Partners and was a researcher at KieranTimberlake. He is highly 
+                    skilled in modern machine learning frameworks, Python, SQL, Tensorflow, Apache Spark, 
+                    cloud computing, data visualization and comfortable with Javascript, D3, HTML, CSS. He has spoken 
+                    <span class="keyword"><a href="https://segd.org/carlo-bailey">widely</a></span> on the 
+                    <span class="keyword"><a href="https://vimeo.com/205599947">applications</a></span> of ML and data in 
+                    the <span class="keyword"><a href="https://www.youtube.com/watch?v=bIfj2dTE7_M">AEC</a></span> industry.
+			<!-- </div> -->
+		</div>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-full.js"></script>
+</head>
+<!-- <body> -->
+
+    <!--
+        This is our drawing surface. It covers the entire page
+        viewport (see CSS).
+    -->
+    <canvas id="canvas" resize keepalive="true"></canvas>
+
+    <script type="text/paperscript" canvas="canvas">
+    var width, height, center;
+var points = 10;
+var smooth = true;
+var path = new Path();
+var mousePos = view.center / 2;
+var pathHeight = mousePos.y;
+path.fillColor = 'white';
+path.opacity = 0.1;
+path.strokeWidth = 2;
+path.blendMode = 'difference';
+initializePath();
+
+function initializePath() {
+    center = view.center;
+    width = view.size.width;
+    height = view.size.height / 1.25;
+    path.segments = [];
+    path.add(view.bounds.bottomLeft);
+    for (var i = 1; i < points; i++) {
+        var point = new Point(width / points * i, center.y);
+        path.add(point);
+    }
+    path.add(view.bounds.bottomRight);
+    path.fullySelected = false;
+}
+
+function onFrame(event) {
+    pathHeight += (center.y - mousePos.y - pathHeight) / 10;
+    for (var i = 1; i < points; i++) {
+        var sinSeed = event.count + (i + i % 10) * 100;
+        var sinHeight = Math.sin(sinSeed / 200) * pathHeight;
+        var yPos = Math.sin(sinSeed / 100) * sinHeight + height;
+        path.segments[i].point.y = yPos;
+    }
+    if (smooth)
+        path.smooth({ type: 'continuous' });
+}
+
+function onMouseMove(event) {
+    mousePos = event.point;
+}
+
+function onMouseDown(event) {
+    smooth = !smooth;
+    if (!smooth) {
+        // If smooth has been turned off, we need to reset
+        // the handles of the path:
+        for (var i = 0, l = path.segments.length; i < l; i++) {
+            var segment = path.segments[i];
+            segment.handleIn = segment.handleOut = null;
+        }
+    }
+}
+
+// Reposition the path whenever the window is resized:
+function onResize(event) {
+    initializePath();
+}
+
+    </script>
+    
+
+</body>
+</html>
+
+
