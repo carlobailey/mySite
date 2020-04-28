@@ -1,3 +1,3 @@
 # Portfolio Site
 
-Personal static website hosted on a GCP storage bucket
+Personal site to host some of my work
