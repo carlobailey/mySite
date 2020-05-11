@@ -14,6 +14,9 @@ tags:
 
 Post I made for the [Topos](https://topos.com/) COVID-19 app – original post on medium [here](https://medium.com/topos-ai/what-do-the-similarities-and-differences-between-places-tell-us-about-how-covid-19-is-spreading-86e9233a9e56)
 
+&nbsp;
+&nbsp;
+
 Dense urban counties with large populations have the most concentrated numbers of cases and deaths caused by COVID-19. This can be attributed to many factors beyond their respective population density, particularly the fact that New York City and Boston (cities containing counties with some of the highest concentration of cases) are global travel hubs. While population density, to a large degree explains the high level of mortality⁽¹⁾ these cities have experienced, there are other factors that also have a statistically significant relationship to mortality and infection⁽²⁾: the number of daily commuters using public transportation networks, the percentage of residential buildings with 50+ units, even the density of pizza restaurants (a subject near and dear to our hearts) in a neighborhood. In this article, we will explore the similarities between counties based on a variety of factors and see whether this can give us insight into death rates across the U.S caused by COVID-19.⁽³⁾
 Left: Number of commuters who take public transportation in relation to the total number of deaths. Size of the circles indicates the number of days since stay at home policy was enacted. Both and X and Y axis follow a logarithmic scale. Right: Percentage of large multifamily residential buildings versus total number of deaths as of April 13th
 
@@ -22,6 +25,8 @@ Left: Number of commuters who take public transportation in relation to the tota
 [scatter]: https://miro.medium.com/max/1000/1*csyQw2LLbK0ihQJjB2cofw.png
 *Percentage of large multifamily residential buildings versus total number of deaths as of April 13th*
 
+&nbsp;
+&nbsp;
 
 **Correlation to total death count**
 
@@ -33,6 +38,9 @@ One of the first questions we asked as the pandemic started to unfold was, “Wh
 
 [correlate]: https://miro.medium.com/max/1400/1*kZDzFnF5PP-Dx9a-dtKDKg.png
 *Selection of features correlated to total death counts per county across the country*
+
+&nbsp;
+&nbsp;
 
 **Similarities and dissimilarities between counties**
 
@@ -67,6 +75,9 @@ Similar trajectories of daily deaths can be seen in many of the most similar (as
 
 If we look at the number of cases over time for the most dissimilar counties to Brooklyn, in terms of the distributions of commuter transportation and housing type, we can see that the growth of cases is a lot slower than that of the counties in NYC. Whereas initially Brooklyn saw cases double every 5 days, in Waynesboro, Virginia or Attala, Mississippi cases are doubling every 14–16 days. None of these counties have seen any deaths so far (as of April 13th, 2020).
 
+&nbsp;
+&nbsp;
+
 **Similarities between cities**
 
 When we zoom out to look at the data at the city-level (here we use Combined Statistical Area to define a city), the features that correlate most highly with death rates differ slightly from those at the county level. There is a strong relationship between older populations and higher death rates from COVID-19; and with the removal of New York City from the analysis, the density of single family detached homes becomes a highly correlated feature, explaining ~65% of the variation.
@@ -82,6 +93,9 @@ This time, we will look at similar cities to a current (as of April 13th, 2020) 
 The most similar cities are widely dispersed geographically, from Louisville to Greensboro. Picking 3 of the most similar cities, Louisville, Dayton and Birmingham, we can see that although their daily death rates are currently much lower than Detroit’s, the growth rates are starting to ramp up. Given the similar distributions of older vulnerable populations, these cities may see cases rise even further.
 
 ![image not found](https://miro.medium.com/max/1400/1*FGGfO7uucBtsT7nCzq7LBg.png)
+
+&nbsp;
+&nbsp;
 
 Footnotes
 - 1: Population density accounts for 45% of the variance in mortality rates across the country, p < 0.0001
