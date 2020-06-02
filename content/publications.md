@@ -4,7 +4,7 @@ date: 2020-04-27T00:26:49-04:00
 draft: false
 ---
 
-*Papers*
+*Papers (peer reviewed)*
 
 - [Augmented space planning: Using procedural generation to automate desk layouts](https://journals.sagepub.com/eprint/KumUk4AE8tsngPnqENDX/full?utm_campaign=%F0%9F%8F%A2+%F0%9F%9A%99+%F0%9F%A4%96+The+Physical+World+Tech+Newsletter+&utm_medium=email&utm_source=Revue+newsletter), June 13, 2018
 
@@ -17,7 +17,13 @@ draft: false
 
 *Talks*
 
+- [Sciame lecture series, City College New York](https://ssa.ccny.cuny.edu/events/sciame-lecture-series-carlo-bailey/), February 2020
+
+- [VizTech, Columbia University](https://www.arch.columbia.edu/events/806-viz-tech-converging-pedagogies-practices), February 2018
+
+- [Subscription economy, SEGD Xlab](https://segd.org/carlo-bailey-subscription-economy), November 2017
+
 - [Center for Architecture](https://vimeo.com/205599947), December 2016
 
-- [Columbia University](https://www.youtube.com/watch?v=bIfj2dTE7_M?t=18m30s), November 2016
+- [Making a place for work, Columbia University](https://www.youtube.com/watch?v=bIfj2dTE7_M?t=18m30s), November 2016
 
