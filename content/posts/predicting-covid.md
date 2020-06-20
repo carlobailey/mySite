@@ -1,5 +1,5 @@
 ---
-title: "Disease models & differential equations: connecting geographies with time series clustering"
+title: "Predicting COVID-19 With Tax Returns"
 date: 2020-06-10T14:18:53-04:00
 draft: false
 ---
